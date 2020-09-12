@@ -47,7 +47,7 @@ port = '5000'
 # Basic test for the REST API endpoint that processes and stores new logs in the db
 #
 def test_add_logs():
-	url = f'http://{host}:{port}/savelogs'
+	url = f'http://{host}:{port}/save_logs'
 	
 	# Add new log to db
 	logs = util.generate_documents(numDocuments=5)
@@ -81,7 +81,7 @@ def test_add_logs():
 # Basic test for the REST API endpoint that retrieves logs
 #
 def test_get_logs():
-	url = f'http://{host}:{port}/logs'
+	url = f'http://{host}:{port}/get_logs'
 	
 	# Add new log to db
 	logs = util.generate_documents(numDocuments=1)

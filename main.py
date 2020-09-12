@@ -13,23 +13,23 @@ app = Flask(__name__)
 def not_found(error):
     return 'The route you are trying to access does not exist.', 404
 
+# Only kept this here for debugging purposes.
+#@app.route('/')
+#def home():
+#	return 'Server ready for requests.'
 
-@app.route('/')
-def home():
-	return 'Server ready for requests.'
 
-
-@app.route('/savelog', methods=['POST'])
+@app.route('/save_log', methods=['POST'])
 def save_log():
 	return process_logs(request, False)
 
 
-@app.route('/savelogs', methods=['POST'])
+@app.route('/save_logs', methods=['POST'])
 def save_logs():
 	return process_logs(request)
 
 
-@app.route('/logs', methods=['GET'])
+@app.route('/get_logs', methods=['GET'])
 def get_logs():
 	# I'll assume that if the request body is empty all logs should be returned.
 	# I understand that this is impractical in a real-world scenario.
@@ -106,7 +106,7 @@ def process_logs(request, multiple=True):
 				else:
 					return '{} logs saved successfully.'.format(len(ids))
 			else:
-				return 'Error saving.', 500
+				return 'Error saving log(s).', 500
 		except ParserError:
 			return 'Invalid datetime format.', 400
 		except ValueError:

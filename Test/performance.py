@@ -45,7 +45,7 @@ def request_post(url, json=None, auth=None, verify=False):
 
 # Each test tries to save 5 logs for a user
 def test_save_logs(numLogPerUser):
-	url = f'http://{host}:{port}/savelogs'
+	url = f'http://{host}:{port}/save_logs'
 	logs = util.generate_documents(numDocuments=numLogPerUser, numUsers=1, numSessions=1)
 
 	# Set same username for all logs and adjust datetime format for JSON
