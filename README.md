@@ -44,10 +44,11 @@ Request duration (s) - average: 0.411 | min: 0.033 | max: 0.593
 ```
 
 3. Scalability
+- In its current state, the application is **not** suitable for production due to poor scalability. I intended to deploy it on Google Cloud but I encountered several problems which I couldn't solve in the time being.
 - The preliminar tests show that the current basic application is able to handle a decent amount of requests. However, to get to the point in which thousands of users could interact with the application simultaneously and a massive amount of data could be collected, some strategies are required.
   - The data representation can be optimized depending on the use case, just like what happens in the provided sample log (compact representation).
   - Optimizations in the database can help increasing the performance of queries. For instance, indices were created for the fields that I saw as essential, but not knowing the most frequently accessed data, they could even hurt the performance.
-  - When the focus is to simply handle more users/requests, scaling the application itself seems rather ineffective. However, setting up new instances of the application is a more realistic approach - or even creating containers and deploying to several servers (not something I have experience with, unfortunately). I believe that the effort to scale the application ultimately is greater than the cost to gather a more powerful infrastructure.
+  - When the focus is to simply handle more users/requests, the ability to scale the application reaches a limit quite fast. However, setting up new instances of the application is a more direct approach - or even creating containers and deploying to several servers (not something I have experience with, unfortunately). The idea of distributing processing and using a load balancer can be helpful.
 
 ## REST API Endpoints
 The following documentation considers that the application is running locally, so the URL is defined by the local ip address (127.0.0.1) and default port used by Flask (5000).
