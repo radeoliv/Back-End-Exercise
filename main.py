@@ -153,11 +153,6 @@ def create_filter_query(filter):
 	return conditions
 
 
-# Run in HTTP
+# Run in HTTP (only used when running application locally)
 if __name__ == '__main__':
 	app.run(host='127.0.0.1', port='5000')
-
-# Or..
-#$set FLASK_ENV=development
-#$env:FLASK_APP = "main.py"
-#python -m flask run

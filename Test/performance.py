@@ -70,7 +70,6 @@ def perf_test(delay=0, maxIterations=sys.maxsize, numLogPerUser=5):
 #=============================================================
 # Statistics
 #=============================================================
-
 def stats(numUsers, maxIterations, numLogPerUser, totalTime):
 	numPass = 0
 	numFail = 0

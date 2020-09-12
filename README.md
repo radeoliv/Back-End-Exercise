@@ -33,14 +33,14 @@ The folder **Test** contains files to test the functionality of the API (*test_a
 - The performance test tries to simulate multiple concurrent requests sent to the application. The requirements of the exercise specify that the front end will send logs every 5 minutes from up to 100 users, but there is no information regarding the amount of data being transmitted. I set up a basic test to simulate **100 users** sending **5 logs** per request for a total of **50 times** sequentially, which satisfies the requirements. The obtained results (presented below) show that the current application is able to process an average of 233 requests per second.
 ```
 -----------------Test Statistics-----------------
-Total execution time (s): 21.46
+Total execution time (s): 12.38
 Concurrent users: 100
 Logs per user: 5
 Requests per user: 50
 
 Total tests: 5000 | Pass: 5000 | Fail: 0
-Requests per second: 233.0
-Request duration (s) - average: 0.411 | min: 0.033 | max: 0.593
+Requests per second: 403.9
+Request duration (s) - average: 0.232 | min: 0.018 | max: 0.390
 ```
 
 3. Scalability
